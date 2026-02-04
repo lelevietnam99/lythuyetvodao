@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lý Thuyết Võ Đạo - Phật Quang Quyền</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='100' fill='%235d4037'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Segoe UI, sans-serif' font-weight='bold' font-size='220' fill='%23FFD700'%3EVODAO%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <meta name="theme-color" content="#5d4037">
+
+    <style>
+        :root {
+            --brown-color: #5d4037;
+            --blue-color: #1565C0;
+            --green-belt: #2E7D32;
+            --red-border: #D32F2F;
+            --yellow-border: #FBC02D;
+            --white-rank: #f5f5f5;
+            --text-color: #333;
+            --bg-color: #fafafa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        h1.main-title {
+            color: #b71c1c;
+            text-transform: uppercase;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* ACCORDION STYLES */
+        .theory-section {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        summary {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            position: relative;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        /* MÀU SẮC CÁC CẤP ĐAI */
+        .bg-brown { background-color: var(--brown-color); }
+        .bg-blue { background-color: var(--blue-color); }
+        .bg-green { background-color: var(--green-belt); }
+        .bg-red { background-color: var(--red-border); }
+        .bg-yellow { background-color: var(--yellow-border); color: #333; }
+        .bg-white { background-color: #fff; color: #333; border: 1px solid #ddd; }
+
+        .content {
+            padding: 20px;
+            background-color: #fff;
+            display: none; /* Ẩn mặc định cho hiệu ứng mượt nếu dùng JS, nhưng ở đây dùng native details */
+        }
+
+        details[open] .content {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* QUESTION & ANSWER STYLES */
+        .qa-item {
+            margin-bottom: 25px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 15px;
+        }
+
+        .qa-item:last-child {
+            border-bottom: none;
+        }
+
+        .question {
+            font-weight: 700;
+            color: #b71c1c;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .answer {
+            color: #333;
+            text-align: justify;
+        }
+
+        .answer ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+
+        .answer li {
+            margin-bottom: 5px;
+        }
+
+        /* Back to top button */
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover { background-color: #333; }
+    </style>
+</head>
+<body>
+
+<button onclick="topFunction()" id="myBtn" title="Lên đầu trang">⬆</button>
+
+<div class="container">
+    <header>
+        <h1 class="main-title">Lý Thuyết Võ Đạo</h1>
+        <p class="subtitle">Giáo trình khảo hạch môn phái Phật Quang Quyền</p>
+    </header>
+
+    <details class="theory-section">
+        <summary class="bg-brown">1. Đai Nâu (Thi thăng cấp Lam Đai 1)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Đọc thuộc 6 lời thề môn sinh Phật Quang Quyền?</div>
+                <div class="answer">
+                    <ol>
+                        <li>Tập võ để chiến thắng sự sợ hãi trong lòng mình và đạt được hạnh nhẫn nhục tận cùng.</li>
+                        <li>Tập võ để bênh vực kẻ vô tội bị ức hiếp.</li>
+                        <li>Tập võ để bảo vệ chánh pháp.</li>
+                        <li>Tập võ để bảo vệ đất nước.</li>
+                        <li>Rất trung thành với thầy tổ, rất tín nghĩa với huynh đệ.</li>
+                        <li>Yêu thích lao động giúp đời.</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Môn phái PQQ thành lập khi nào? Do ai sáng lập?</div>
+                <div class="answer">
+                    Được thành lập vào năm 1992, khi chùa Thiền Tôn Phật Quang mới hình thành.<br>
+                    Do Võ sư Thượng tọa Thích Chân Quang sáng lập. Người mong muốn phục dựng truyền thống võ học chốn thiền môn, giúp Tăng Ni có sức khỏe tu học và xây dựng thế hệ thanh niên văn võ song toàn.
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Thái Tổ Sư của môn phái là ai?</div>
+                <div class="answer">Tôn giả Rahula (La Hầu La) - Mật Hạnh Đệ Nhất.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">4. Danh tính Võ sư Sáng tổ?</div>
+                <div class="answer">Thượng Tọa Tiến sĩ Thích Chân Quang (sinh ngày 09/12/1959).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">5. Chưởng môn hiện nay là ai?</div>
+                <div class="answer">Đại Đức Thích Nghiêm Giám.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">6. Ý nghĩa lối chào của môn phái?</div>
+                <div class="answer">Chắp tay trước ngực:<br>
+                1. Biểu thị hòa bình, hữu nghị, không tranh đấu.<br>
+                2. Chấm dứt vọng động, không tạo nghiệp tham sân si.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">7. 3 điều sơ khởi về kỷ luật võ đường?</div>
+                <div class="answer">
+                    1. Đi tập đúng giờ, nghỉ phải xin phép.<br>
+                    2. Chăm chỉ luyện tập, hòa nhã với huynh đệ.<br>
+                    3. Chào hỏi đúng nghi thức (chào Thầy, huynh đệ, chào Tôn ảnh Tổ sư).
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">8. Quan niệm dụng võ của PQQ (5 điểm)?</div>
+                <div class="answer">
+                    1. Không thượng đài.<br>
+                    2. Không gây hấn, thử võ.<br>
+                    3. Chỉ dùng để tự vệ, bảo vệ người thân.<br>
+                    4. Đấu tranh cho lẽ phải.<br>
+                    5. Bảo vệ Đạo pháp và Đất nước.
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-blue">2. Lam Đai Nhất Cấp (Thi lên Nhị Cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Môn phái gia nhập Liên đoàn Võ cổ truyền VN khi nào?</div>
+                <div class="answer">Năm 2015.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Phân biệt Võ nghệ, Võ thuật, Võ học, Võ đạo?</div>
+                <div class="answer">
+                    <ul>
+                        <li><strong>Võ nghệ:</strong> Có khả năng chiến đấu, kiên trì khổ luyện.</li>
+                        <li><strong>Võ thuật:</strong> Các kỹ thuật chiến đấu (quyền, cước, binh khí...).</li>
+                        <li><strong>Võ học:</strong> Nghiên cứu, lý luận, so sánh đối chiếu võ thuật với khoa học, y học.</li>
+                        <li><strong>Võ đạo:</strong> Ứng dụng võ vào đạo đức, tu dưỡng bản thân, khắc chế bản ngã.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Ý nghĩa lời thề thứ 6 "Yêu thích lao động giúp đời"?</div>
+                <div class="answer">
+                    Giúp thành tựu 2 điều:<br>
+                    1. Có phước (tránh nghèo khó).<br>
+                    2. Có sức mạnh thực tế và nội lực từ việc lao động chân tay, rèn ý chí.
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">4. Quan niệm về "Trung thành"?</div>
+                <div class="answer">Trung thành với hướng đi của môn phái đã vạch ra, chứ không phải trung thành mù quáng với cá nhân nào.</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-blue">3. Lam Đai Nhị Cấp (Thi lên Tam Cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Muốn phát huy môn phái, võ sinh phải làm gì?</div>
+                <div class="answer">
+                    - Khổ luyện để trở thành HLV, truyền bá võ thuật.<br>
+                    - Thực hành võ đạo trong đời sống (Cha từ con hiếu, công dân tốt...).
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Hệ thống đai của PQQ?</div>
+                <div class="answer">
+                    Gồm 6 màu: Nâu, Lam, Lục, Đỏ (Hồng), Vàng (Hoàng), Trắng (Bạch).<br>
+                    Ý nghĩa màu Nâu: Màu của đất, màu áo nhà Chùa, tượng trưng sự giản dị, bền bỉ, chịu thương chịu khó.
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Ý nghĩa biểu tượng (Logo) môn phái?</div>
+                <div class="answer">
+                    Hình tròn (Bánh xe Pháp luân). Nền vàng đất. <br>
+                    8 hình elip móc nối nhau (Bát chánh đạo).<br>
+                    4 màu (Xanh, Lục, Đỏ, Vàng) tượng trưng 4 tính chất: Công đức, Đạo đức, Khí công, Thiền định.
+                </div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-blue">4. Lam Đai Tam Cấp (Thi lên Tứ Cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Giải thích "Văn ôn Võ luyện"?</div>
+                <div class="answer">Văn hóa cần ôn tập, Võ thuật cần rèn luyện thường xuyên. Cả hai bổ trợ cho nhau để thành người toàn diện.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Muốn rèn luyện tinh thần, VSPQQ phải làm gì?</div>
+                <div class="answer">Phải rèn luyện: Sống khỏe, Đức độ, Cương trực, Trầm tĩnh, Tháo vát, Công đức, Thiền định.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Xuất xứ bài Lão Hổ Thượng Sơn?</div>
+                <div class="answer">Do Lão võ sư Lê Văn Kiển (Tám Kiển) - phái Nam Tông sáng lập. Được chọn làm bài quy định quốc gia năm 1993. "Lão Hổ" nghĩa là con cọp tinh thông lão luyện.</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-blue">5. Lam Đai Tứ Cấp (Thi lên Lục Đai 1)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Vai trò của Tấn pháp trong Võ cổ truyền?</div>
+                <div class="answer">Tấn là cái "móng" của ngôi nhà võ thuật. Tấn vững mới phát lực tốt, trụ vững trước đòn đánh và biến hóa bộ pháp linh hoạt.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Lòng tự tin khác tự phụ thế nào?</div>
+                <div class="answer">
+                    - <strong>Tự tin:</strong> Tin vào giá trị thực có do rèn luyện (ung dung, điềm đạm).<br>
+                    - <strong>Tự phụ:</strong> Hãnh tiến, không có thực tài (kiêu căng, hợm hĩnh).
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Xuất xứ bài Tứ Linh Đao?</div>
+                <div class="answer">Thuộc võ phái "Thiếu Lâm Nội Quyền – Kim Kê – Tây Sơn Nhạn". Tác giả: Cố võ sư Kim Kê.</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-green">6. Lục Đai (Các cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Môn sinh PQQ rèn luyện theo tinh thần nào?</div>
+                <div class="answer">BI - TRÍ - DŨNG.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Tác phong (Phong thái) là gì?</div>
+                <div class="answer">Là dáng vẻ bên ngoài (ăn mặc, đi đứng, nói năng). Nhìn tác phong biết ngay hạng người. VSPQQ phải giữ gìn tác phong ở mọi nơi.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Xuất xứ bài Hùng Kê Quyền?</div>
+                <div class="answer">Do Đông Định Vương Nguyễn Lữ sáng tạo, mô phỏng các thế đánh của gà chọi (nhỏ nhưng linh hoạt, hiểm hóc).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">4. Xuất xứ bài Ngọc Trản Quyền?</div>
+                <div class="answer">Thuộc dòng võ Bình Định (Sa môn võ đạo). Là bài quy định quốc gia.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">5. Xuất xứ bài Lão Mai Quyền?</div>
+                <div class="answer">Võ cổ truyền Quảng Nam (Võ đường Kỳ Sơn). Mô phỏng dáng vẻ cây mai già nhưng dẻo dai, uy lực.</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-red">7. Hồng Đai (Các cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Định hướng học tập của VSPQQ?</div>
+                <div class="answer">Học cho rộng, Hỏi cho kỹ, Nghĩ cẩn thận, Luận cho sáng.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. 4 thời kỳ lập võ?</div>
+                <div class="answer">1. Chiến đấu với cầm thú -> 2. Song đấu (người với người) -> 3. Hỗn đấu (1 người với nhiều người) -> 4. Võ học nhập vào binh pháp.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Xuất xứ bài Song Tuyết Kiếm?</div>
+                <div class="answer">Của môn phái Nam Hồng Sơn (Hà Nội).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">4. Phương châm tự luyện (4 Luyện)?</div>
+                <div class="answer">Luyện Thể - Luyện Trí - Luyện Khí - Luyện Tâm.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">5. Lập thân - Lập chí - Lập nghiệp?</div>
+                <div class="answer">
+                    - <strong>Lập thân:</strong> Gây dựng chỗ đứng (tài đức, vật chất đủ sống).<br>
+                    - <strong>Lập chí:</strong> Nuôi hoài bão lớn.<br>
+                    - <strong>Lập nghiệp:</strong> Xây dựng sự nghiệp để lại cho đời.
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">6. Xuất xứ bài Thái Sơn Côn?</div>
+                <div class="answer">Võ cổ truyền Bình Định (Võ đường Phan Thọ).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">7. Xuất xứ bài Phong Hoa Đao?</div>
+                <div class="answer">Môn phái Hoa Quyền (Hà Nội).</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-yellow">8. Hoàng Đai (Các cấp)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Vai trò của Huấn Luyện Viên?</div>
+                <div class="answer">Là nhà giáo dục thể chất, người lãnh đạo tổ chức lớp tập, và là tấm gương đạo đức cho võ sinh.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Đức tính Cương Trực?</div>
+                <div class="answer">Cương quyết trong tinh thần, hòa nhã ngoài thái độ. Ngay thẳng một cách tế nhị (không thô lỗ).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Xuất xứ bài Siêu Xung Thiên?</div>
+                <div class="answer">Bài đại đao của Võ sư Phan Văn Quảng. Dùng cho tướng chỉ huy đánh trận (đánh 4 mặt).</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">4. Ngũ hành trong võ thuật?</div>
+                <div class="answer">
+                    - Thủy: Đầu ngón tay (xỉa).<br>
+                    - Mộc: Cạnh tay (chém).<br>
+                    - Hỏa: Cùi chỏ.<br>
+                    - Thổ: Ức bàn tay (chưởng).<br>
+                    - Kim: Nắm đấm.
+                </div>
+            </div>
+            <div class="qa-item">
+                <div class="question">5. Xuất xứ bài Độc Lư Thương?</div>
+                <div class="answer">Tây Sơn Võ Đạo - Bình Định (Tương truyền do 3 anh em nhà Tây Sơn biên soạn).</div>
+            </div>
+        </div>
+    </details>
+
+    <details class="theory-section">
+        <summary class="bg-white">9. Bạch Đai (Cao đẳng)</summary>
+        <div class="content">
+            <div class="qa-item">
+                <div class="question">1. Khái niệm Võ Đạo?</div>
+                <div class="answer">Là cái Tâm của người học võ. Hướng tới Chân - Thiện - Mỹ. Võ thuật gắn liền với nghệ thuật quân sự dựng nước và giữ nước.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">2. Quản trị võ đường (4 nguyên tắc)?</div>
+                <div class="answer">Phân nhiệm - Hệ thống kiểm soát - Ủy quyền - Thống nhất chỉ huy.</div>
+            </div>
+            <div class="qa-item">
+                <div class="question">3. Khi nói chuyện trước công chúng?</div>
+                <div class="answer">Chuẩn bị kỹ đề tài, nắm bắt tâm lý thính giả. Khi nói phải đúng lúc, tác phong đàng hoàng, giọng điệu phù hợp.</div>
+            </div>
+        </div>
+    </details>
+
+</div>
+
+<script>
+    // Nút Back to Top
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
